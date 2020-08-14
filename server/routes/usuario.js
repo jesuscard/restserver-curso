@@ -23,10 +23,6 @@ app.get("/usuario", verificaToken, (req, res) => {
   let limite = req.query.limite || 5;
   limite = Number(limite);
 
-  nombreFil = req.query.nombre || null;
-
-  roleFil = req.query.role || null;
-
   Usuario.find({ estado: true }, "nombre email role estado")
     .skip(desde)
     .limit(limite)
