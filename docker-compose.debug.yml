@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  07-restserver:
+    image: 07-restserver
+    build: .
+    environment:
+      NODE_ENV: development
+    ports:
+      - 3000
+      - 9229:9229
+    command: ["node", "--inspect=0.0.0.0:9229", "server/server.js"]

@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  07-restserver:
+    image: 07-restserver
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000
